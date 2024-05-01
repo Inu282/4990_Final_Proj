@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Itinerary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        html, body {
+            margin: 0;
+            height: 100vh;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 95%; /* Adjusted width */
+            max-width: 1200px; /* Adjusted max-width */
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            height: 80%;
+            overflow: scroll;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .itinerary {
+            margin-top: 20px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #004494;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Itinerary</h1>
+        <div class="itinerary">{{ itinerary|safe }}</div>
+        <a href="/">Plan Another Trip</a>
+    </div>
+</body>
+</html>
